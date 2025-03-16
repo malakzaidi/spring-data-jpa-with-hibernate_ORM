@@ -8,9 +8,13 @@ import org.springdata.project1springboot.repositories.ConsultationRepository;
 import org.springdata.project1springboot.repositories.MedecinRepository;
 import org.springdata.project1springboot.repositories.PatientRepository;
 import org.springdata.project1springboot.repositories.RendezVousRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
+@Transactional
 public class HospitalServiceImpl implements HospitalService {
 
         private PatientRepository patientRepository;
