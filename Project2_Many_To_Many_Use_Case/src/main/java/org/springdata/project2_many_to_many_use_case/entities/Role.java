@@ -17,6 +17,7 @@ public class Role {
     private Long id;
 
     private String desc;
+    @Column(length=20 , unique=true)
     private String roleName;
 
     @ManyToMany
