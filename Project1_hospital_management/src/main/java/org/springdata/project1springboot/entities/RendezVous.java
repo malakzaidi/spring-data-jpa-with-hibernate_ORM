@@ -13,8 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class RendezVous {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     @Temporal(TemporalType.DATE)
     private Date date;
     @Enumerated(EnumType.STRING)
