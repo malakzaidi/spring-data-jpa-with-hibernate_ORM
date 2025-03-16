@@ -1,6 +1,6 @@
-../Project2_Many_To_Many_Use_Case/HELP.md
+../../HELP.md
 target/
-!Project1_hospital_management/.mvn/wrapper/maven-wrapper.jar
+!spring-data-jpa-with-hibernate_ORM/Project2_Many_To_Many_Use_Case/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -14,7 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-Project1_hospital_management/.idea
+spring-data-jpa-with-hibernate_ORM/Project2_Many_To_Many_Use_Case/.idea
 *.iws
 *.iml
 *.ipr
