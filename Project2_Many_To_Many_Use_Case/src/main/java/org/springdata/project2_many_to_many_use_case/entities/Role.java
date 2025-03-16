@@ -23,5 +23,6 @@ public class Role {
     @ManyToMany
     //@JoinTable(name = "USERS_ROLES") // Uncomment if you want to use a join table
     @ToString.Exclude
+    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private List<User> users = new ArrayList<>();
 }
