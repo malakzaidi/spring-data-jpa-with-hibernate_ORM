@@ -1,6 +1,10 @@
 package org.springdata.project1springboot;
 
+import org.springdata.project1springboot.entities.Consultation;
+import org.springdata.project1springboot.repositories.ConsultationRepository;
+import org.springdata.project1springboot.repositories.MedecinRepository;
 import org.springdata.project1springboot.repositories.PatientRepository;
+import org.springdata.project1springboot.repositories.RendezVousRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -24,10 +28,11 @@ public class Project1SpringBootApplication {
 
 
 	@Bean
-	CommandLineRunner start (PatientRepository patientRepository) {
+	CommandLineRunner start (PatientRepository patientRepository , MedecinRepository medecinRepository,
+							 ConsultationRepository consultationRepository , RendezVousRepository rendezVousRepository) {
 		return args -> {
 			// Ajouter des patients
-			Stream.of("Malak", "Douaa", "Sami")
+			Stream.of("Micheal", "Samira", "Douaa" ,"Malak")
 					.forEach(nom -> {
 						Patient patient = new Patient();
 						patient.setNom(nom);
@@ -57,6 +62,34 @@ public class Project1SpringBootApplication {
 			System.out.println("Liste des patients après suppression :");
 			patientRepository.findAll().forEach(System.out::println);
 		};
+		Stream.of("Souad","Touria", "Yanis" ,"Aymane")
+				.forEach(name -> {
+					Medecin medecin = new Medecin();
+					medecin.setNom(name);
+					medecin.setSpecialite(Math.random()>0.5?"Dermatologue":"Cardio");
+					medecin.setEmail(name + "@gmail.com");
+					medecinRepository.saveMedecin(medecin);
+				});
+
+		Patient patient = patientRepository.findById(1L).orElse(null);
+		Patient patient1 = patientRepository.findByNom("Aymane");
+
+		Medecin medecin = service.findMedecinByNom("Yassine");
+
+		RendezVous rendezVous = new RendezVous();
+		rendezVous.setDate(new Date());
+		rendezVous.setStatus(StatusRDV.PENDING);
+		rendezVous.setMedecin(medecin);
+		rendezVous.setPatient(patient);
+		rendezVousRepository.saveRDV(rendezVous);
+
+
+		RendezVous rendezVous1 = service.findRDVById(1l).orElse(null);
+		Consultation consultation = new Consultation();
+		consultation.setDateConsultation(new Date());
+		consultation.setRendezVous(rendezVous1);
+		consultation.setRapport("this is the first rapport of the 1st consultation");
+		consultationRepository.saveConsultation(consultation);
 	}
 
 	}
