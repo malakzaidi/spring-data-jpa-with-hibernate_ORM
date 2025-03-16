@@ -180,12 +180,12 @@ This repository contains other projects that demonstrate different use cases of 
 
 1. **Hospital Management System**:
    - Demonstrates **One-to-Many** and **Many-to-One** relationships between patients, doctors, and appointments.
-   - [Link to Hospital Management Project](#https://github.com/malakzaidi/spring-data-jpa-with-hibernate_ORM/tree/main/Project1_hospital_management)
+   - [Link to Hospital Management Project](https://github.com/malakzaidi/spring-data-jpa-with-hibernate_ORM/tree/main/Project1_hospital_management)
 
 2. **Many-to-Many Use Case**:
    - Demonstrates a **Many-to-Many** relationship between users and roles.
-   - [Link to Many-to-Many Use Case Project](#https://github.com/malakzaidi/spring-data-jpa-with-hibernate_ORM/tree/main/Project2_Many_To_Many_Use_Case)
-
+   - [Link to Many-to-Many Use Case Project](https://github.com/malakzaidi/spring-data-jpa-with-hibernate_ORM/tree/main/Project2_Many_To_Many_Use_Case)
+     
 ---
 
 ## 📝 Conclusion
