@@ -84,7 +84,7 @@ public class Project1SpringBootApplication {
 		rendezVousRepository.saveRDV(rendezVous);
 
 
-		RendezVous rendezVous1 = service.findRDVById(1l).orElse(null);
+		RendezVous rendezVous1 = rendezVousRepository.findAll().get(0);
 		Consultation consultation = new Consultation();
 		consultation.setDateConsultation(new Date());
 		consultation.setRendezVous(rendezVous1);

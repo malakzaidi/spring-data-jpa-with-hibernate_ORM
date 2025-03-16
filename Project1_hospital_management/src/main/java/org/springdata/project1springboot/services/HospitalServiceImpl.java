@@ -9,6 +9,8 @@ import org.springdata.project1springboot.repositories.MedecinRepository;
 import org.springdata.project1springboot.repositories.PatientRepository;
 import org.springdata.project1springboot.repositories.RendezVousRepository;
 
+import java.util.UUID;
+
 public class HospitalServiceImpl implements HospitalService {
 
         private PatientRepository patientRepository;
@@ -42,7 +44,7 @@ public class HospitalServiceImpl implements HospitalService {
 
         @Override
         public Consultation saveConsultation(Consultation consultation) {
-
+            rendezVous.setId(UUID.randomUUID().toString());
             return consultationRepository.save(consultation);
         }
 
