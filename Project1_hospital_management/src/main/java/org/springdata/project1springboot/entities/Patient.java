@@ -4,6 +4,7 @@ package org.springdata.project1springboot.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
