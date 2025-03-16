@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
     @Id
-    private int userId;
+    private String userId;
 
     private String userName;
     private String password;
