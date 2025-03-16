@@ -22,5 +22,6 @@ public class Role {
 
     @ManyToMany
     //@JoinTable(name = "USERS_ROLES") // Uncomment if you want to use a join table
+    @ToString.Exclude
     private List<User> users = new ArrayList<>();
 }
