@@ -24,25 +24,44 @@ public class Project1SpringBootApplication {
 
 
 	@Bean
-	CommandLineRunner start(PatientRepository patientRepository) {
+	CommandLineRunner start (PatientRepository patientRepository) {
 		return args -> {
-			Stream.of("Mohammed","Saad", "Walid")
-					.forEach(name -> {
+			// Ajouter des patients
+			Stream.of("Malak", "Douaa", "Sami")
+					.forEach(nom -> {
 						Patient patient = new Patient();
 						patient.setNom(nom);
 						patient.setDateNaissance(new Date());
 						patient.setMalade(false);
 						patient.setScore(88);
-						service.savePatient(patient);
+						patientRepository.save(patient);
 					});
 
+			System.out.println("Liste des patients :");
+			patientRepository.findAll().forEach(System.out::println);
 
+			Long patientId = patientRepository.findAll().get(0).getId(); // Récupère l'ID du premier patient
+			System.out.println("Patient avec l'ID " + patientId + " :");
+			patientRepository.findById(patientId).ifPresent(System.out::println);
 
+			patientRepository.findById(patientId).ifPresent(patient -> {
+				patient.setMalade(true);
+				patient.setScore(95);
+				patientRepository.save(patient);
+				System.out.println("Patient mis à jour : " + patient);
+			});
+
+			patientRepository.deleteById(patientId);
+			System.out.println("Patient avec l'ID " + patientId + " supprimé.");
+
+			System.out.println("Liste des patients après suppression :");
+			patientRepository.findAll().forEach(System.out::println);
 		};
+	}
 
 	}
 
-}
+
 
 
 
