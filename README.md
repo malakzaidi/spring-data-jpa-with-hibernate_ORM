@@ -1,5 +1,7 @@
 # 🛠️ Spring Data JPA with Hibernate ORM - Overview and Use Case
 
+![image-alt](https://github.com/malakzaidi/spring-data-jpa-with-hibernate_ORM/blob/main/Screenshot%202025-03-16%20233100.png)
+
 ## 🌟 Overview
 
 This project demonstrates the use of **Spring Data JPA** and **Hibernate ORM** to manage a simple product management system. The goal is to showcase how to perform CRUD operations and query data using Spring Data JPA and Hibernate ORM. The project includes a `ProduitRepository` interface that extends `JpaRepository` to leverage Spring Data JPA's powerful features.
